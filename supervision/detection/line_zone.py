@@ -186,8 +186,6 @@ class LineZone:
             else:
                 self.out_count += 1
                 crossed_out[i] = True
-                
-                
 
         return crossed_in, crossed_out
 
@@ -229,8 +227,8 @@ class LineZoneAnnotator:
         self.text_scale: float = text_scale
         self.text_offset: float = text_offset
         self.text_padding: int = text_padding
-        self.custom_in_text: str = in
-        self.custom_out_text: str = opposite_direction
+        self.custom_in_text: str = custom_in_text
+        self.custom_out_text: str = custom_out_text
         self.display_in_count: bool = display_in_count
         self.display_out_count: bool = display_out_count
 
@@ -329,7 +327,7 @@ class LineZoneAnnotator:
             out_text = (
                 f"{self.custom_out_text}: {line_counter.out_count}"
                 if self.custom_out_text is not None
-                else f"out: {line_counter.out_count}"
+                else f"opposite_direction: {line_counter.out_count}"
             )
             self._annotate_count(
                 frame=frame,
