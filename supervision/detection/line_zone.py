@@ -327,7 +327,7 @@ class LineZoneAnnotator:
             out_text = (
                 f"{self.custom_out_text}: {line_counter.out_count}"
                 if self.custom_out_text is not None
-                else f"out: {line_counter.out_count}"
+                else f"opposite_direction: {line_counter.out_count}"
             )
             self._annotate_count(
                 frame=frame,
